@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piggi · Gestión de horas extras</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Pantalla de inicio de sesión -->
+  <section id="vista-login" class="login">
+    <div class="login-card">
+      <div class="marca">
+        <div class="logo">P</div>
+        <div>
+          <h1>Piggi</h1>
+          <p>Gestión de horas extras</p>
+        </div>
+      </div>
+      <form id="form-login" novalidate>
+        <label>Correo electrónico
+          <input type="email" id="login-correo" placeholder="nombre@empresa.co" required>
+        </label>
+        <label>Contraseña
+          <input type="password" id="login-clave" placeholder="••••••••" required>
+        </label>
+        <p id="login-error" class="error" hidden></p>
+        <button type="submit" class="btn btn-primario btn-bloque">Ingresar</button>
+      </form>
+      <div class="demo">
+        <p><strong>Usuarios de prueba</strong> (contraseña: <code>piggi123</code>)</p>
+        <button class="chip" data-demo="empleado@piggi.co">Empleado</button>
+        <button class="chip" data-demo="supervisor@piggi.co">Supervisor</button>
+        <button class="chip" data-demo="admin@piggi.co">Administrador</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicación -->
+  <section id="vista-app" class="app" hidden>
+    <aside class="menu">
+      <div class="marca marca-menu">
+        <div class="logo">P</div>
+        <div><h1>Piggi</h1><p>Horas extras</p></div>
+      </div>
+      <nav id="nav"></nav>
+      <button id="btn-salir" class="btn btn-salir">Cerrar sesión</button>
+    </aside>
+    <main>
+      <header class="barra">
+        <button id="btn-menu" class="btn-menu" aria-label="Menú">☰</button>
+        <h2 id="titulo-vista">Inicio</h2>
+        <div class="barra-der">
+          <button id="btn-notif" class="campana" aria-label="Notificaciones">🔔<span id="notif-cont" hidden></span></button>
+          <div id="panel-notif" class="panel-notif" hidden></div>
+          <div class="perfil"><span id="perfil-avatar" class="avatar"></span>
+            <div><strong id="perfil-nombre"></strong><small id="perfil-rol"></small></div>
+          </div>
+        </div>
+      </header>
+      <div id="contenido" class="contenido"></div>
+    </main>
+  </section>
+
+  <div id="toast" class="toast" hidden></div>
+  <div id="modal" class="modal" hidden><div class="modal-caja" id="modal-caja"></div></div>
+
+  <script src="js/calculadora.js"></script>
+  <script src="js/modelos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
